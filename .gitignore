@@ -1,3 +1,46 @@
-tf_env
-.venv
-venv
+# --- Environments ---
+tf_env/
+.venv/
+*venv/
+env/
+
+# --- Python cache & build ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.so
+
+# --- Jupyter notebooks ---
+.ipynb_checkpoints/
+
+# --- MLflow tracking ---
+mlruns/**
+mlartifacts/**
+mlflow.db
+
+# --- Data & models (optional, ignore large files) ---
+*.csv
+*.tsv
+*.json
+*.xlsx
+*.h5
+*.pkl
+*.db
+*.model
+*.joblib
+
+# --- Logs & outputs ---
+*.log
+logs/
+output/
+
+# --- IDE/editor configs ---
+.vscode/
+.idea/
+*.swp
+
+# --- OS-specific clutter ---
+.DS_Store
+Thumbs.db
