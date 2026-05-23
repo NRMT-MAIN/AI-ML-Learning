@@ -1,8 +1,10 @@
 # --- Environments ---
 tf_env/
 .venv/
+venv/
 *venv/
 env/
+*env*/
 
 # --- Python cache & build ---
 __pycache__/
