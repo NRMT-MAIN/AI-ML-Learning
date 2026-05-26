@@ -1,0 +1,30 @@
+version: '3'
+services:
+  airflow-webserver:
+    image: apache/airflow:3.0.0
+    environment:
+      _PIP_ADDITIONAL_REQUIREMENTS: apache-airflow-providers-http
+
+  airflow-scheduler:
+    image: apache/airflow:3.0.0
+    environment:
+      _PIP_ADDITIONAL_REQUIREMENTS: apache-airflow-providers-http
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - airflow_network
+
+  networks:
+    airflow_network:
+      external: false
+
