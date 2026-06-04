@@ -19,6 +19,13 @@ def form():
         return f"Name: {name}, Email: {email}"
     return render_template('form.html')
 
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form['name']
+    email = request.form['email']
+    return f"Name: {name}, Email: {email}"
+
+
 @app.route('/about')
 def about():
     return "This is a sample Flask application."
